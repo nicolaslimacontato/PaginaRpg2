@@ -1,0 +1,332 @@
+/* #region global */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis';
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+section {
+    width: 100%;
+    height: auto;
+}
+
+.conteinerMeu {
+    width: 100%;
+    height: auto;
+}
+
+:root {
+    --text-superhero: 4em;
+    --text-hero: 3em;
+    --text-title: 2em;
+    --text-subtitle: 1.7em;
+    --text-body: 1.4em;
+    --text-small: 1.2em;
+}
+
+:root {
+    --color-default: #c61a1a;
+}
+
+/* #endregion */
+
+/* #region navbar */
+
+.navbar {
+    transition: .5s ease-in-out;
+}
+
+.navbar img {
+    width: 3em;
+}
+
+.navbar-scrolled {
+    transition: .5s;
+    background-color: black;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: .5s ease-in-out;
+}
+
+.active {
+    border-bottom: 2px solid red;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    opacity: 0;
+    transition: ease-in .5s;
+    height: 2px;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+.nav-link.active:hover::after {
+    opacity: 0;
+    /* Garante que o efeito de hover não seja aplicado quando o elemento está ativo */
+}
+
+.btn-danger {
+    background-color: red !important;
+    transition: .5s;
+}
+
+.btn-danger:hover {
+    background-color: rgb(110, 1, 1) !important;
+    transition: .5s;
+    transform: scale(1.1);
+}
+
+/* #endregion */
+
+/* #region home */
+#home {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bghome.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+    left: 0px;
+    transition: top 0.5s linear, left 0.5s linear;
+}
+
+.topContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.685);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.textoTitulo {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffffff, #effaff, #e1f5f6, #d2eaf9, #bee8fd, #d2eaf9, #e1f5f6, #effaff);
+    background-size: 400% 100%;
+    animation: degrade 10s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    width: 100%;
+}
+
+@keyframes degrade {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 400%;
+    }
+}
+
+.topContainer h1 {
+    font-family: "MedievalSharp";
+    font-size: 6em;
+}
+
+/* #endregion */
+
+/* #region sobre */
+
+.underline {
+    background-color: #c61a1a;
+    height: 2px;
+    width: 200px;
+}
+
+#sobre {
+    width: 100%;
+    height: auto;
+    margin: 1em 0;
+}
+
+#sobre h1 {
+    font-size: var(--text-hero);
+}
+
+.card-body {
+    padding: 1em 0;
+}
+
+.card {
+    border: 2px solid rgb(230, 230, 230);
+    transition: .5s;
+}
+
+.card:hover {
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+    will-change: transform;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .75) !important;
+    transition: .5s;
+}
+
+#sobre .fontCardsSobre {
+    background-color: var(--color-default);
+    border-radius: 50%;
+    /* Alterei o valor para deixar o fundo redondo */
+    width: 60px;
+    /* Ajustei o tamanho do fundo para 100px */
+    height: 60px;
+    /* Ajustei o tamanho do fundo para 100px */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    margin: 1em auto;
+}
+
+.fontCardsSobre i {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: var(--text-title);
+}
+
+.card-title {
+    padding: 1em 0;
+    font-size: var(--text-title);
+}
+
+.card-text {
+    padding: 0 1em;
+    padding-bottom: 1em;
+    font-size: 1.2em;
+}
+
+/* #endregion */
+
+/* #region complemento */
+
+.complementoContainer {
+    background-color: rgb(230, 230, 230);
+    padding: 2em 0;
+}
+
+
+.textovalda h1 {
+    font-size: 4em;
+    padding: .3em 0;
+}
+
+.textovalda p {
+    font-size: var(--text-small);
+    margin-right: 1em;
+}
+
+/* #endregion */
+
+/* #region requisitos */
+
+#requisitos img {
+    width: 20%;
+    margin: 1em 0;
+}
+
+#requisitos .card {
+    border: 2px solid rgb(230, 230, 230);
+    transition: .5s;
+}
+
+#requisitos .cardroll20:hover {
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+    will-change: transform;
+    box-shadow: 0 1rem 3rem rgba(182, 1, 158, 0.75) !important;
+    transition: .5s;
+}
+
+#requisitos .carddiscord:hover {
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+    will-change: transform;
+    box-shadow: 0 1rem 3rem #5865f2 !important;
+    transition: .5s;
+}
+
+
+#requisitos .cardwikidot:hover {
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+    will-change: transform;
+    box-shadow: 0 1rem 3rem rgb(243, 83, 83) !important;
+    transition: .5s;
+}
+
+#requisitos .cardtumblr:hover {
+    transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+    will-change: transform;
+    box-shadow: 0 1rem 3rem #36465D !important;
+    transition: .5s;
+}
+
+/* #endregion */
+
+/* #region ficha */
+
+#classInfo{
+    background-color:  rgb(255, 255, 255);
+    padding: 1em;
+    border: 2px solid red;
+    border-radius: 2em;
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 80%;
+    margin: 1.5em auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#classSelect{
+    text-align: left;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none; /* Remove a borda de foco */
+}
+
+.escolhas{
+    margin: 2em 0;
+}
+
+.hidden {
+    opacity: 0; /* Inicia com a opacidade zero para estar oculto */
+    transition: opacity 0.5s ease; /* Adiciona uma transição suave de opacidade */
+}
+
+.shown {
+    opacity: 1; /* Define a opacidade como 1 para estar visível */
+    transition: opacity 0.5s ease; /* Adiciona uma transição suave de opacidade */
+}
+
+
+/* #endregion */
